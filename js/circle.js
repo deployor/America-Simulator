@@ -18,7 +18,7 @@ class Circle {
         this.ringColor = `hsl(${Math.random() * 360}, 90%, 70%)`;
         this.approachTimer = 0;
         this.lifespan = 3000 + Math.random() * 2000; // 3-5 seconds
-        this.afraidDistance = 150;
+        this.afraidDistance = 300;
         this.afraidFactor = 3;
     }
 
@@ -26,7 +26,6 @@ class Circle {
         // Check the distance to mouse
         const dx = mouseX - this.x;
         const dy = mouseY - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
         
         // Update approach circle
         if (this.fadeIn) {
@@ -37,31 +36,14 @@ class Circle {
             }
         }
         
-        // If mouse gets close, run away!
-        if (distance < this.afraidDistance && !this.escaping) {
-            this.escaping = true;
-            
-            // Run in the opposite direction of the mouse
-            const angle = Math.atan2(dy, dx);
-            const newTargetX = this.x - Math.cos(angle) * this.afraidDistance * this.afraidFactor;
-            const newTargetY = this.y - Math.sin(angle) * this.afraidDistance * this.afraidFactor;
-            
-            // Keep within canvas bounds
-            this.targetX = Math.max(this.radius, Math.min(this.game.canvas.width - this.radius, newTargetX));
-            this.targetY = Math.max(this.radius, Math.min(this.game.canvas.height - this.radius, newTargetY));
+        let squareDistance = dx * dx + dy * dy;
+        if (squareDistance < this.afraidDistance * this.afraidDistance) {
+            let moveX = 10000/((dx * dx) * -Math.sign(dx))
+            let moveY = 10000/((dy * dy) * -Math.sign(dy))
+            this.x += moveX;
+            this.y += moveY;
         }
 
-        // Move toward target position
-        const targetDx = this.targetX - this.x;
-        const targetDy = this.targetY - this.y;
-        const targetDistance = Math.sqrt(targetDx * targetDx + targetDy * targetDy);
-        
-        if (targetDistance > 1) {
-            this.x += targetDx * this.speed * (this.escaping ? 2 : 0.5) * deltaTime / 16;
-            this.y += targetDy * this.speed * (this.escaping ? 2 : 0.5) * deltaTime / 16;
-        } else {
-            this.escaping = false;
-        }
         
         // Countdown lifespan
         this.lifespan -= deltaTime;
