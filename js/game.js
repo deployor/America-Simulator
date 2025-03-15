@@ -6,8 +6,6 @@ class Game {
         
         this.circles = [];
         this.score = 0;
-        this.combo = 0;
-        this.maxCombo = 0;
         this.clicksTotal = 0;
         this.clicksHit = 0;
         
@@ -31,8 +29,6 @@ class Game {
         this.canvas.addEventListener('click', this.handleClick.bind(this));
         
         this.scoreElement = document.getElementById('score-value');
-        this.comboElement = document.getElementById('combo-value');
-        this.accuracyElement = document.getElementById('accuracy-value');
         
         this.resizeCanvas();
         window.addEventListener('resize', this.resizeCanvas.bind(this));
@@ -62,8 +58,6 @@ class Game {
     reset() {
         this.circles = [];
         this.score = 0;
-        this.combo = 0;
-        this.maxCombo = 0;
         this.clicksTotal = 0;
         this.clicksHit = 0;
         this.updateUI();
@@ -83,7 +77,6 @@ class Game {
         if (!this.isRunning) return;
         
         this.audioManager.playSound('miss');
-        this.combo = 0;
         this.clicksTotal++;
         this.updateUI();
     }
@@ -116,9 +109,6 @@ class Game {
     
     updateUI() {
         this.scoreElement.textContent = this.score;
-        this.comboElement.textContent = this.combo;
-        const accuracy = this.clicksTotal === 0 ? 0 : (this.clicksHit / this.clicksTotal * 100).toFixed(2);
-        this.accuracyElement.textContent = accuracy;
     }
     
     gameLoop(timestamp) {

@@ -10,7 +10,6 @@ body {
     background-color: #111;
     color: #fff;
     overflow: hidden;
-    cursor: url('../assets/cursor.png'), auto;
 }
 
 #game-container {
