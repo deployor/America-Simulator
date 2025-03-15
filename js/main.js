@@ -17,16 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize game
     const game = new Game(canvas, audioManager);
-    const fallbackManager = new FallbackManager(game);
-    
-    // Add error handling for asset loading
-    window.addEventListener('error', function(e) {
-        if (e.target.tagName === 'IMG') {
-            console.warn('Image failed to load:', e.target.src);
-            fallbackManager.handleImageError(game);
-            return false;
-        }
-    }, true);
     
     // Show a specific screen and hide others
     function showScreen(screenId) {
@@ -75,12 +65,4 @@ document.addEventListener('DOMContentLoaded', () => {
     difficultySelect.addEventListener('change', () => {
         game.setDifficulty(difficultySelect.value);
     });
-    
-    // Add global error handling to prevent crashes
-    window.onerror = function(message, source, lineno, colno, error) {
-        console.error('Game error:', message, 'at', source, lineno, colno);
-        alert('Something went wrong! The game will restart.');
-        location.reload();
-        return true;
-    };
 });

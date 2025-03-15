@@ -16,6 +16,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Pointless osu! running at http://localhost:${port}`);
+  console.log(`America Simulator running at http://localhost:${port}`);
   console.log(`(Circles will run away from your cursor. Good luck trying to click them!)`);
 });

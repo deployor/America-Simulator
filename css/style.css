@@ -3,11 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-<<<<<<< HEAD
-    font-family: 'Exo 2', 'Arial', sans-serif;
-=======
     font-family: "Pixelify Sans", sans-serif;
->>>>>>> 0bc728b5a5f831e512771885826ada1cfd6b866f
 }
 
 body {
@@ -50,8 +46,8 @@ body {
 .logo {
     font-size: 4rem;
     font-weight: bold;
-    color: #f062a1;
-    text-shadow: 0 0 10px rgba(240, 98, 161, 0.7);
+    color: #ff66aa;
+    text-shadow: 0 0 10px rgba(255, 102, 170, 0.7);
     margin-bottom: 10px;
 }
 
@@ -62,7 +58,7 @@ body {
 }
 
 button {
-    background-color: #f062a1;
+    background-color: #ff66aa;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -71,12 +67,10 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #ff80b3;
+    background-color: #ff99cc;
     transform: scale(1.05);
 }
 
