@@ -1,7 +1,7 @@
-# America Simulator
+# Pointless osu!
 
 ## Overview
-America Simulator is a prank game inspired by Osu!, designed as a frustrating experience where the circles move away from your cursor, making it impossible to play.
+Pointless osu! is a prank game inspired by Osu!, designed as a frustrating experience where the circles move away from your cursor, making it impossible to play.
 
 ## Features
 - UI that mimics rhythm games like Osu!

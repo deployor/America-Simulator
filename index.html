@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>America Simulator - Definitely Not Osu!</title>
+    <title>Pointless osu! - Definitely Not Osu!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="game-container">
         <div id="menu" class="screen active">
-            <div class="logo">America Simulator</div>
+            <div class="logo">Pointless osu!</div>
             <div class="subtitle">Definitely Not Osu!</div>
             <button id="play-button">Play</button>
             <button id="options-button">Options</button>
@@ -23,6 +26,7 @@
             <div id="hud">
                 <div id="score">Score: <span id="score-value">0</span></div>
                 <div id="combo">Combo: <span id="combo-value">0</span>x</div>
+                <div id="multiplier">Multiplier: <span id="multiplier-value">1.0x</span></div>
                 <div id="accuracy">Accuracy: <span id="accuracy-value">0.00</span>%</div>
             </div>
             <canvas id="game-canvas"></canvas>
@@ -53,6 +57,7 @@
     </div>
 
     <script src="js/audio.js"></script>
+    <script src="js/fallback.js"></script>
     <script src="js/circle.js"></script>
     <script src="js/game.js"></script>
     <script src="js/main.js"></script>
