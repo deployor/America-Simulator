@@ -1,7 +1,6 @@
 class AudioManager {
     constructor() {
         this.sounds = {
-            hit: new Audio('assets/sounds/hit.mp3'),
             miss: new Audio('assets/sounds/miss.mp3'),
             music: new Audio('assets/sounds/background.mp3')
         };

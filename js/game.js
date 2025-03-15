@@ -6,8 +6,6 @@ class Game {
         
         this.circles = [];
         this.score = 0;
-        this.clicksTotal = 0;
-        this.clicksHit = 0;
         
         this.circleInterval = 1000;
         this.lastCircleTime = 0;
@@ -58,8 +56,6 @@ class Game {
     reset() {
         this.circles = [];
         this.score = 0;
-        this.clicksTotal = 0;
-        this.clicksHit = 0;
         this.updateUI();
     }
     
@@ -77,7 +73,6 @@ class Game {
         if (!this.isRunning) return;
         
         this.audioManager.playSound('miss');
-        this.clicksTotal++;
         this.updateUI();
     }
     
