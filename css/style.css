@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
     font-family: 'Exo 2', 'Arial', sans-serif;
+=======
+    font-family: "Pixelify Sans", sans-serif;
+>>>>>>> 0bc728b5a5f831e512771885826ada1cfd6b866f
 }
 
 body {
@@ -53,7 +58,7 @@ body {
 .subtitle {
     font-size: 1.5rem;
     color: #99ccff;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 button {
@@ -61,7 +66,7 @@ button {
     color: white;
     border: none;
     padding: 12px 30px;
-    margin: 10px;
+    margin: 5px;
     font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
