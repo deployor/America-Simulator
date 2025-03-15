@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>America Simulator - Definitely Not Osu!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="game-container">
+        <div id="menu" class="screen active">
+            <div class="logo">America Simulator</div>
+            <div class="subtitle">Definitely Not Osu!</div>
+            <button id="play-button">Play</button>
+            <button id="options-button">Options</button>
+            <div class="footer">
+                <p>This is a parody game and is not affiliated with Osu!</p>
+            </div>
+        </div>
+
+        <div id="game" class="screen">
+            <div id="hud">
+                <div id="score">Score: <span id="score-value">0</span></div>
+                <div id="combo">Combo: <span id="combo-value">0</span>x</div>
+                <div id="accuracy">Accuracy: <span id="accuracy-value">0.00</span>%</div>
+            </div>
+            <canvas id="game-canvas"></canvas>
+            <button id="back-button">Back to Menu</button>
+        </div>
+
+        <div id="options" class="screen">
+            <h2>Options</h2>
+            <div class="option">
+                <label for="music-volume">Music Volume</label>
+                <input type="range" id="music-volume" min="0" max="100" value="50">
+            </div>
+            <div class="option">
+                <label for="sfx-volume">SFX Volume</label>
+                <input type="range" id="sfx-volume" min="0" max="100" value="80">
+            </div>
+            <div class="option">
+                <label for="difficulty">Difficulty</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Hard</option>
+                    <option value="impossible">Impossible</option>
+                </select>
+            </div>
+            <button id="options-back">Back</button>
+        </div>
+    </div>
+
+    <script src="js/audio.js"></script>
+    <script src="js/circle.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

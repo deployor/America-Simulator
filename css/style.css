@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    overflow: hidden;
+    cursor: url('../assets/cursor.png'), auto;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu {
+    background: linear-gradient(to bottom, #222, #111);
+    text-align: center;
+}
+
+.logo {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ff66aa;
+    text-shadow: 0 0 10px rgba(255, 102, 170, 0.7);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #99ccff;
+    margin-bottom: 40px;
+}
+
+button {
+    background-color: #ff66aa;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff99cc;
+    transform: scale(1.05);
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+#game {
+    background-color: #000;
+}
+
+#game-canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#hud {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    text-align: right;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+
+#hud div {
+    margin: 5px 0;
+}
+
+#back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+#options {
+    background: linear-gradient(to bottom, #222, #111);
+    padding: 20px;
+}
+
+.option {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.option label {
+    margin-bottom: 5px;
+    color: #99ccff;
+}
+
+input[type="range"], select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+select {
+    cursor: pointer;
+}
