@@ -136,9 +136,10 @@ class Game {
         
         this.circles = this.circles.filter(circle => circle.active);
         this.circles.forEach(circle => {
-            circle.update(deltaTime, this.mouseX, this.mouseY);
+            this.score += parseInt(circle.update(deltaTime, this.mouseX, this.mouseY));
             circle.draw(this.ctx);
         });
+        this.updateUI();
         
         requestAnimationFrame(this.gameLoop.bind(this));
     }

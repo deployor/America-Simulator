@@ -40,10 +40,10 @@ class Circle {
         if (squareDistance < this.afraidDistance * this.afraidDistance) {
             let moveX = 10000/((dx * dx) * -Math.sign(dx))
             let moveY = 10000/((dy * dy) * -Math.sign(dy))
-            this.x += moveX;
-            this.y += moveY;
-        }
 
+            this.x += moveX * deltaTime / 10;
+            this.y += moveY * deltaTime / 10;
+        }
         
         // Countdown lifespan
         this.lifespan -= deltaTime;
@@ -55,6 +55,9 @@ class Circle {
         if (this.lifespan <= 0) {
             this.active = false;
         }
+
+        let distance = Math.sqrt(squareDistance);
+        return Math.min(distance - this.afraidDistance, 60);
     }
 
     draw(ctx) {
